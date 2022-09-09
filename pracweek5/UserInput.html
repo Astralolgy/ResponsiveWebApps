@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Week 5 of Web Development, SIT120</title>
+  <script src="https://unpkg.com/vue@2"></script>
+</head>
+<body>
+    <h1>Playing with user inputs</h1>
+
+    <p>The following will create a reactable text based on whats ticked.</p>
+    <div id = 'checknames'>
+        <input type="checkbox" id="tanya" value="Tanya" v-model="checkedNames">
+        <label for="tanya">Tanya</label>
+
+        <input type="checkbox" id="hannah" value="Hannah" v-model="checkedNames">
+        <label for="hannah">Hannah</label>
+
+        <input type="checkbox" id="ella" value="Ella" v-model="checkedNames">
+        <label for="ella">Ella</label>
+        <br>
+        <span>Friends Selected: {{ checkedNames }}</span>
+    </div>
+    <script>
+        new Vue({
+            el: '#checknames',
+            data: {
+                checkedNames: []
+            }
+        })
+    </script>
+
+    <p>This will create a select box, so you can choose an option, as well as have your selection boradcasted.</p>
+    <div id = Dropdown>
+    <select v-model="selected" multiple>
+        <option>Sword</option>
+        <option>Shield</option>
+        <option>Wand</option>
+      </select>
+      <br>
+      <span>Selected: {{ selected }}</span>
+    </div>
+    <script>
+        new Vue({
+            el: '#Dropdown',
+            data: {
+                selected: []
+            }
+        })
+    </script>
+    <!--A personal note due to the time spent on this task
+    just make sure everything is interconnected properly, your biggest set back
+    was not nesting things and making slight grammatical errors-->
+</body>
+</html>
