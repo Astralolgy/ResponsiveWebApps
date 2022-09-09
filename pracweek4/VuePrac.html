@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My first Vue app</title>
+  <script src="https://unpkg.com/vue@2"></script>
+</head>
+    <!--The Vue guide keeps referring to DOM, DOM means Document Object Model, aka this vv-->
+<body>
+  <div id="app">
+    {{ message }}
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue! Welcome to your first Vue application.'
+      }
+    })
+  </script>
+
+    <div id="app-2">
+    <span v-bind:title="timeBound">
+      Hover your mouse over me for a few seconds
+      to see the time which you loaded this website!
+    </span>
+    </div>
+
+    <script>
+    var app2 = new Vue({
+     el: '#app-2',
+      data: {
+       timeBound: 'You loaded this page on ' + new Date().toLocaleString()
+        }
+    })
+    </script>
+    <!--These are two very basic declaritively rendered examples of HTML-->
+    <!--Those are two very basic examples of declaritive rendering, next is conditional loops below-->
+    <div id="DisappearingElement">
+    <span v-if="seen">So long as my value is true, this text is visible!</span>
+    </div>
+
+    <script>
+      var app3 = new Vue({
+        el: '#DisappearingElement',
+        data: {
+          seen: true
+        }
+      })
+    </script>
+
+    <div id="MyToDoList">
+        <ol>
+            <li v-for="todo in todos">
+             {{ todo.text }}
+            </li>
+        </ol>
+    </div>
+    <script>
+    var app4 = new Vue({
+        el: '#MyToDoList',
+        data: {
+          todos: [
+            { text: 'Learn HTML - 85%' },
+            { text: 'Learn CSS - 80%' },
+            { text: 'Learn JavaScript - 75%' },
+            { text: 'Learn Vue - 25%' },
+            { text: 'Build something awesome - 15%' }
+          ]
+        }
+      })
+    </script>
+
+    <div id="app-5">
+        <p>{{ message }}</p>
+        <button v-on:click="reverseMessage">Reverse Message</button>
+        <p>You'd never realise the message was reverse if it wasn't for the grammar...</p>
+    </div>
+
+    <script>
+    var app5 = new Vue({
+        el: '#app-5',
+        data: {
+            message: 'No lemon, no melon!'
+        },
+        methods: {
+            reverseMessage: function () {
+                this.message = this.message.split('').reverse().join('')
+            }
+        }
+    }) 
+    </script>
+
+    <p v-show="ok">I'm being shown by v-show!</p>
+
+    
+</body>
+</html>
