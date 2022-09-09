@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Practicing Javascript</h2>
+
+    <p>I'll be playing with various string methods available in the JS library! </p>
+    
+    <p id ="webIntro"></p>
+
+    <button onclick="myFirstButton()">Funky button one</button>
+    <p id="transformingFruit">By pressing button one, magically, Strawberries will change into another fruit!</p>
+
+    <button onclick="mySecondButton()">Cool button two</button>
+    <p id="vanishingFruit">But if you press button two, no strawberries, watermelons, or bananas will remain, only chocolate.</p>
+
+    <script>
+        let webIntro = 
+        "Hello! Rather than having to rewrite this text several times over" + 
+        " I can simply write it into a variable and then when it needs to change, I can just change the variables content!";
+        document.getElementById("webIntro").innerHTML = webIntro;
+    </script>
+
+    <script>
+    function myFirstButton() 
+    {
+        let magicFruit = document.getElementById("transformingFruit").innerHTML; 
+        document.getElementById("transformingFruit").innerHTML =
+        fixList = magicFruit.replace("Strawberries", "Blueberries");
+    }
+    </script>
+
+    <script>
+    function mySecondButton()
+    {
+        let vanish = document.getElementById("vanishingFruit").innerHTML;
+        document.getElementById("vanishingFruit").innerHTML =
+        onlyChoc = vanish.slice(83);
+    }
+    </script>
+
+    <p>We can also use some basic methods to numbers as well using Javascript and printing them too.</p>
+    <p id ="Convert"></p>
+    <p>
+        Just like that, without manually writing the number I can print any number I want as long as I change a small value, simplifying the process.
+        The first number was returned as a string and can be treated like one, while the second was returned as a number, and can be handled like such.
+        Visually there's no difference but behind the scenes this can mean a lot! 
+    </p>
+
+    <p id ="Parsing"></p>
+    <p>
+        A cool trick is to also return numbers given in a string variable, because if we write 70 between " " then thats a string, so we can instead
+        parse that value to return our desired number...
+        However! It'll only parse it using the parseFloat method if a number is at the very start! That's why it returns NaN at the end.
+        NaN = Not a Number
+    </p>
+
+    <p id="TheArrays">
+        We can also use arrays, and their related to methods to return lists of values of strings or integers.
+        While the name Amanda exists at the end, looking behind the front page shows it was added in to replace the name Katie!
+    </p>
+
+    <script>
+        let num = 782;
+        document.getElementById("Convert").innerHTML = 
+        num.toString();
+        num.valueOf();
+    </script>
+
+    <script>
+        document.getElementById("Parsing").innerHTML = 
+        parseFloat("51") + "<br>" +
+        parseFloat("78 34") + "<br>" +
+        parseFloat("She's 27 years old");
+    </script>
+
+    <script>
+        const names = ["Kira", "Milly", "Grace", "Katie"];
+        document.getElementById("TheArrays").innerHTML = names.pop();
+        document.getElementById("TheArrays").innerHTML = names.push("Amanda");
+        document.getElementById("TheArrays").innerHTML = names.join(", ");
+    </script>
+
+    <p>Finally, Javascript is versatile and can be used to implement various methods using dates and time</p>
+    <p>The order of a date object goes: Year, month, day, hour, minute, second, millisecond:</p>
+    <p id="exDate">
+        Less numbers can be used to get the same effect without the precision, just using 3 will result in year, month date, and so on.
+    </p>
+
+    <p id="utcDate"></p>
+    <p>Above this is the date it currently is, in universal time!</p>
+
+    <p id="theVerySecond"></p>
+    <p>Above this, is the EXACT second which you opened this website!</p>
+    
+    <script>
+        const date = new Date(2002, 08, 15, 13, 54, 11, 3);
+        const dated = new Date();
+        document.getElementById("exDate").innerHTML = date;
+        document.getElementById("utcDate").innerHTML = dated.getUTCDate();
+        document.getElementById("theVerySecond").innerHTML = dated.getSeconds();
+    </script>
+</body>
+</html>
