@@ -1,0 +1,234 @@
+/*Using an off-white shade for my background to make website less harsh on the eyes*/
+body { background-color: floralwhite; font-family: Verdana, Arial, sans-serif;}
+/*Commonly used page factors*/
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.header {
+    background-color: #45bff7;
+    border-radius: 20px; /*rounded corners!*/
+    margin-left: 150px; 
+    margin-right: 150px;
+    text-align: center;
+}
+.navbar {
+  overflow: hidden;
+  background-color: #45bff7;
+  border-radius: 20px;
+  margin-left: 150px; 
+  margin-right: 150px;    
+  margin-top: -25px;
+  padding: 7px;
+  word-spacing: 120px;
+  text-align: center;
+}
+.navbar a{
+    padding: 5px;
+}
+.navbar a:hover {
+  background-color: #a0ddfa;
+  border-radius: 20px;
+  color: #45bff7;
+}
+
+/*featured/index page*/
+.featured-container {
+  max-width: 1000px;
+  max-height: 50px;
+  position: relative;
+  margin: auto;
+}
+.myfeatures {
+  display: none;
+}
+.text {
+  color: black;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+.active {
+  background-color: #a0ddfa;
+  width: 80%;
+  height: 60%;
+  object-fit: cover;
+}
+.fade {
+  animation-name: fade;
+  animation-duration: 1s;
+}
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/*For my commission/help page*/
+.sidebar {
+  float: left;
+  overflow: hidden;
+  margin-left: 25px;
+  margin-right: 25px;
+  border-radius: 20px;
+  padding-left: 10px;
+  background-color:#45bff7;
+  width: 20%;
+  height: 300px;
+  font-size: small;
+}
+.scroll {
+  overflow-y: scroll, hidden;
+  overflow-x: hidden;
+  margin-top: 25px;
+  margin-left: 25px;
+  border-radius: 20px;
+  background-color:#a0ddfa;
+  width: 70%;
+  max-height: 300px;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+}
+form.searchbar input[type=text] {
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: center;
+  width: 20%;
+  background: #f1f1f1;
+  margin-left: 24%;
+  margin-top: 20px;
+}
+form.searchbar button {
+  border-radius:20px;
+  float: center;
+  width: 2%;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+form.searchbar button:hover {
+  background: #0b7dda;
+}
+form.searchbar::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/*profile stuff*/
+.profilePic {
+  vertical-align: middle;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+  margin-left: 100px;
+}
+.usernamebar {
+  width: 10%;
+  margin-top: -75px;
+  margin-left: 300px;
+  text-align: center;
+  font-size: 25px;
+}
+/*Make this into a button for further useage later*/
+.customiseprofile {
+  float: right;
+  background-color: #45bff7;
+  border-radius: 20px;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin-top: -75px;
+  margin-left: 800px;
+  margin-right: 150px;
+  text-align: center;
+}
+.customiseprofile a {
+  padding-left: 7px;
+  padding-right: 7px;
+}
+.customiseprofile a:hover {
+  background-color: #a0ddfa;
+  border-radius: 20px;
+  color: #45bff7;
+}
+.profiletype {
+  width: 20%;
+  background-color: #a0ddfa;
+  margin-left: 75px;
+  border-radius: 20px;
+  text-align: center;
+}
+.aboutme {
+  float: left;
+  overflow: hidden;
+  margin-left: 75px;
+  border-radius: 20px;
+  background-color:#45bff7;
+  width: 20%;
+  height: 300px;
+}
+.buttonthing {
+  width: 20%;
+  background-color: #a0ddfa;
+  margin-top: -36px;
+  margin-left: 500px;
+  border-radius: 20px;
+  text-align: center;
+}
+.galleryswitch {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-top: 33px;
+  margin-left: 500px;
+  border-radius: 20px;
+  background-color:#a0ddfa;
+  width: 60%;
+  height: 600px;
+}
+
+.contactussheet {
+  margin-left: 15%;
+  margin-right: 15%;
+
+}
+
+/*Login/Registration page*/
+
+
+/*Footer*/
+.footer {  
+
+  background-color: #45bff7;
+  border-radius: 20px; /*rounded corners!*/
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 85%;
+  margin-left: 150px;
+  margin-right: 150px;
+  padding: 7px;
+  word-spacing: 120px;
+  text-align: center;
+}
+.footer a{
+  padding: 5px;
+}
+.footer a:hover {
+background-color: #a0ddfa;
+border-radius: 20px;
+color: #45bff7;
+}
