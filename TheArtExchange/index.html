@@ -2,72 +2,78 @@
 <html>
 <head>
     <link rel="stylesheet" href="default.css">
-    <!-- <script src="https://unpkg.com/vue@next"></script> -->
+    <script src="https://unpkg.com/vue@next"></script>
     <title>The Artist Exchange</title>
 </head>
 <body>
+  <div id="app">
     <div class="header">
-        <h1>The Artist Exchange</h1>
+      <h1>The Artist Exchange</h1>
     </div>
 
     <div class="navbar">
-        <a>Featured</a>
-        <a href="find.html">Find-Commissions</a>
-        <a href="help.html">Artist-Help</a>
-        <a href="profilepage.html" title="Visit your profile">My-Profile</a>
-        <a href="login.html">Login</a>
+      <a>Featured</a>
+      <a href="find.html">Find-Commissions</a>
+      <a href="help.html">Artist-Help</a>
+      <a href="profilepage.html" title="Visit your profile">My-Profile</a>
+      <a href="login.html">Login</a>
     </div>
 
+    <!--This is the front page gallery-->
     <h3 style="text-align:center">This weeks featured artists</h3>
     <div class="featured-container">
-
+      <div id="featureGallery">
         <div class="myfeatures fade">
           <img src="LuckyCommitsACrime.jpg" style="width:100%">
           <div class="text">Artist Featured: Monstreko</div>
         </div>
-        
+            
         <div class="myfeatures fade">
           <img src="Mythic Leaders.png" style="width:100%">
           <div class="text">Artist Featured: Kalisdice</div>
         </div>
-        
+            
         <div class="myfeatures fade">
           <img src="Evening_ball_Astra_Commission_png_July_24_2020.png" style="width:100%">
           <div class="text">Artist Featured: AstroGate</div>
-        </div>
-        
-        </div>
-        <!--While the dots aren't visible (thats on purpose) keep else animation wont run-->
-        <div style="text-align:center">
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-        </div>
-        
-        <script>
-        let slideIndex = 0;
-        showSlides();
-        
-        function showSlides() {
-          let i;
-          let slides = document.getElementsByClassName("myfeatures");
-          let dots = document.getElementsByClassName("dot");
-          for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
-          }
-          slideIndex++;
-          if (slideIndex > slides.length) {slideIndex = 1}    
+        </div> 
+      </div>   
+    </div>
+    <div style="text-align:center">
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+    </div>
+
+    <!--Creates the front page gallery, alternating every 7 seconds.-->
+    <script>
+      let featuredIndex = 0;
+      showfeatured();
+          
+      function showfeatured() {
+        let i;
+        let featured = document.getElementsByClassName("myfeatures");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < featured.length; i++) {
+          featured[i].style.display = "none";  
+        }
+        featuredIndex++;
+        if (featuredIndex > featured.length) {featuredIndex = 1}    
           for (i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(" active", "");
           }
-          slides[slideIndex-1].style.display = "block";  
-          dots[slideIndex-1].className += " active";
-          setTimeout(showSlides, 7000); // Change image every 2 seconds
-        }
-        </script>
-        <div class="footer">
-            <a href="Contact.html">Contact-Us</a>
-            <a href="FAQ.html" title="Frequently asked questions">FAQ</a>
-        </div>     
+        featured[featuredIndex-1].style.display = "block";  
+        dots[featuredIndex-1].className += " active";
+        setTimeout(showfeatured, 7000);
+      }
+    </script>
+
+    <div class="footer">
+          <a href="Contact.html">Contact-Us</a>
+          <a href="FAQ.html" title="Frequently asked questions">FAQ</a>
+    </div>
+
+    <script src="default.js"></script>
+  </div>
 </body>
 </html>

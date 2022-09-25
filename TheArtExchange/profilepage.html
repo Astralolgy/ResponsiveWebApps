@@ -2,7 +2,6 @@
 <html>
 <head>
     <link rel="stylesheet" href="default.css">
-    <script src="default.js"></script>
     <script src="https://unpkg.com/vue@next"></script>
     <title>The Artist Exchange</title>
 </head>
@@ -37,8 +36,20 @@
 
     <div class="row">
         <div>
-            <p class="profiletype">Non-Artist/Artist</p>
-            <p class="aboutme">This will feature user information with a series of user inputted details!</p>
+            <div id="profType">
+                <div class="profiletype">
+                    <p>{{ AccType }}</p>
+                    <p @click="SwitchAccType">Switch?</p>
+                </div>
+            </div>
+            <div id="aboutMe">
+                <p class="aboutme" style="padding:10px">
+                    Gender: {{ Gender }} <br> 
+                    Age: {{ Age }} <br> 
+                    Birthday: {{ Birthday }} <br> 
+                    About Me: {{ About }}
+                </p>
+            </div>
         </div>
         <!--Remove the buttonthing later-->
         <div>
@@ -51,5 +62,7 @@
         <a href="Contact.html">Contact-Us</a>
         <a href="FAQ.html" title="Frequently asked questions">FAQ</a>
     </div>
+
+    <script src="default.js"></script>
 </body>
 </html>

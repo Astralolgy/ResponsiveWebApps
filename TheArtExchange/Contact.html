@@ -2,7 +2,6 @@
 <html>
 <head>
     <link rel="stylesheet" href="default.css">
-    <script src="default.js"></script>
     <script src="https://unpkg.com/vue@next"></script>
     <title>The Artist Exchange</title>
 </head>
@@ -24,11 +23,35 @@
         <p>Thank you for wanting to reach out, you can enter your phone number <br>
         or email down below with your questions or suggestions and I'll contact you as soon as possible!</p>
     </div>
-    
+
+    <div id="contactUs">
+        <form @submit.prevent="submission" style="margin-left:15%; margin-top:5%">
+            <label>Your name:</label>
+            <br>
+            <input type="text" required v-model="name">
+            <br>
+            <label>Your mobile:</label>
+            <br>
+            <input type="text" v-model="number">
+            <br>
+            <label>Your email:</label>
+            <br>
+            <input type="text" required v-model="email">
+            <br>
+            <label>Inquiry:</label>
+            <br>
+            <input type="text" style="width:600px; height:150px" required v-model="inquiry">
+            <p v-if="poorInquiry">{{ poorInquiry }}</p>
+            <br>
+            <button>Submit Inquiry</button>
+        </form>
+    </div>
 
     <div class="footer">
         <a>Contact-Us</a>
         <a href="FAQ.html" title="Frequently asked questions">FAQ</a>
     </div>
+
+    <script src="default.js"></script>
 </body>
 </html>

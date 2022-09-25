@@ -2,8 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="default.css">
-    <script src="default.js"></script>
-    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/vue@2"></script>
     <title>The Artist Exchange</title>
 </head>
 <body>
@@ -29,7 +28,41 @@
     <!--Main content?-->
     <div class="row">
         <div class="sidebar">
-            
+            <p style="text-align:center">Refine Search</p>
+            <div id="filter">
+                <p>Programs:</p>
+                <input type="checkbox" id="Photoshop" value="Photoshop" v-model="selectedFilters">
+                <label for="Photoshop">Photoshop</label>
+                <input type="checkbox" id="Medibang" value="Medibang" v-model="selectedFilters">
+                <label for="Medibang">Medibang</label>
+                <input type="checkbox" id="Procreate" value="Procreate" v-model="selectedFilters">
+                <label for="Procreate">Procreate</label>
+                <p>Product:</p>
+                <input type="checkbox" id="Brushes" value="Brushes" v-model="selectedFilters">
+                <label for="Brushes">Brushes</label>
+                <input type="checkbox" id="References" value="References" v-model="selectedFilters">
+                <label for="References">References</label>
+                <input type="checkbox" id="Packs" value="Packs" v-model="selectedFilters">
+                <label for="Packs">Packs</label>
+                <p>Price Range:</p>
+                <input type="checkbox" id="low" value="Low Range" v-model="selectedFilters">
+                <label for="low">$0-$25</label>
+                <input type="checkbox" id="medium" value="Medium Range" v-model="selectedFilters">
+                <label for="medium">$25-$50</label>
+                <input type="checkbox" id="high" value="High Range" v-model="selectedFilters">
+                <label for="high">$100+</label>
+                <br>
+                <span>Filters selected: {{ selectedFilters }}</span>
+            </div>
+            <script>
+                new Vue({
+                    el: '#filter',
+                    data: {
+                        selectedFilters: []
+                    }
+                })
+            </script>
+        </div>
 
         <div class="scroll">
             <p>placeholder bs</p>
